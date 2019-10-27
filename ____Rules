@@ -1,0 +1,33 @@
+/*
+
+1) Component scripts must contain only function calls.
+2) Use explicit id (especially page id's which is painfull now) as less as possible. If you see it it's a crutch :(
+   You can use PageUtil.getCurrentPageId method
+3) Do not pass state, reportal and other context parameters like this separately. They must be part of context object, which is always 1st parameter.
+4) CSS must be in Styles-HTML-Custom CSS.
+   No on page styling - it can broke pdf export.
+   ID selectors should be avoided for the case that such elem will be re-used later.
+5) All js scripting should be on ReportMaster.
+6) Add discriptions to the functions.
+*/
+
+/**
+* Description
+*@memberof {ClassName}
+*@param {parameter type} thorough description // * @param {object} context: {state: state, report: report, log: log, table: table}
+*@returns {return value type} description
+*/
+/*
+
+7) If you fell like some piece of code can be re-used, create a function for it.
+8) Be consistent with return values: if you return array, then in case it has no values you still return an array but empty, not null.
+9) Comments are welcome! :) Referrig JIRA items is ok as well, if something is not obvious. Nastya what do you think?
+10) Do not take care of unexpected cases in you functions. I.e. if some parameter is invalid, or couldn't be found and report shouldn't really work in that case, throw an Error.
+    throw new Error('ClassName.FunctionName: Function faild because of some invalid situation that shouldn't ever happen.');
+    That simplifies debugging.
+11) If something can be done on front-end instead of backend without too much effort and affecting flexibility/scalability - do it on front-end.
+    That should help performance.
+12) Refactoring(significant improvements) suggestions can be added here https://jiraosl.firmglobal.com/secure/RapidBoard.jspa?rapidView=256&view=detail&selectedIssue=EN-336
+13) New clean code rules and ideas are very welcome :)
+14) If you are uncertain where to put function check with Nastya and Katya)
+*/
